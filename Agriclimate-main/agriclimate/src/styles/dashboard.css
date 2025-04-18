@@ -1,0 +1,99 @@
+/* prediction.css */
+.dashboard-container {
+    padding: 20px;
+    background-color: rgba(248, 249, 250, 0.9); /* Semi-transparent background */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+.dashboard-title {
+    font-size: 2rem;
+    color: #3c3c3c;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.dashboard-description {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.charts-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    width: 100%;
+    min-height: calc(100vh - 160px); /* Account for header/description */
+    overflow: hidden;
+}
+
+.chart-box {
+    background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+    width: 100%;
+    height: 60vh; /* Each chart takes half the visible height */
+    min-height: 450px; /* Minimum height for smaller screens */
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+
+.chart-box:hover {
+    transform: translateY(-10px);
+}
+
+.chart-box h3 {
+    font-size: 1.3rem;
+    margin-bottom: 12px;
+    color: #333;
+    padding: 5 10px;
+}
+
+/* Chart container adjustments */
+.recharts-responsive-container {
+    flex: 1;
+    width: 100% !important; /* Ensure the chart occupies full width */
+    min-width: 0; /* Remove min-width restriction */
+    padding: 0; /* Remove padding to maximize space */
+}
+
+.recharts-wrapper {
+    width: 100% !important;
+    height: 100% !important;
+    overflow: auto;
+    padding: 0;
+}
+
+.recharts-surface {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+/* For mobile responsiveness */
+@media (max-width: 768px) {
+    .dashboard-container {
+        padding: 15px;
+    }
+    
+    .chart-box {
+        height: 45vh;
+        min-height: 380px;
+        padding: 15px;
+    }
+    
+    .dashboard-title {
+        font-size: 1.7rem;
+    }
+    
+    .dashboard-description {
+        font-size: 1rem;
+    }
+}
